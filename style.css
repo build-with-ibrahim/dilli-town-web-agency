@@ -414,6 +414,10 @@ button[type="submit"] {
 
     }
 
+    footer .flex{
+        display: block;
+    }
+
 }
 
 a {
@@ -480,4 +484,8 @@ a {
 
     padding: 20px;
 
+}
+
+footer .flex{
+    display: flex;
 }
