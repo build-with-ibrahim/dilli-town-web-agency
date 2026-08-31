@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dilli-town-web-agency.vercel.app/sitemap.xml
