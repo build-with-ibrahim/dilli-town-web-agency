@@ -414,7 +414,7 @@ button[type="submit"] {
 
     }
 
-    footer .flex{
+    footer .flex {
         display: block;
     }
 
@@ -486,6 +486,9 @@ a {
 
 }
 
-footer .flex{
+footer .flex {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
 }
