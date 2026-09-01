@@ -281,10 +281,7 @@ footer .right {
 }
 
 footer .flex hr {
-    border: none;
-    border-left: 1px solid #FFB8B8;
-    height: 150px;
-    margin: 0;
+    display: none;
 }
 
 input,
