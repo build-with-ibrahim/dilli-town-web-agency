@@ -254,6 +254,32 @@ footer nav a:hover {
 
 }
 
+footer .flex {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 50px;
+
+}
+
+footer .left,
+
+footer .right {
+
+    flex: 1;
+
+}
+
+footer .right {
+
+    text-align: right;
+
+}
+
 input,
 
 textarea {
@@ -415,12 +441,17 @@ button[type="submit"] {
     }
 
     footer .flex {
+
         display: block;
+
     }
 
     footer .right {
+
         text-align: left;
+
         margin-top: 30px;
+
     }
 
 }
@@ -489,20 +520,4 @@ a {
 
     padding: 20px;
 
-}
-
-footer .flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 50px;
-}
-
-footer .left,
-footer .right {
-    flex: 1;
-}
-
-footer .right {
-    text-align: right;
 }
