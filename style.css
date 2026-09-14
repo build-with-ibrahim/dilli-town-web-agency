@@ -1,666 +1,528 @@
-/* =========================================================
-   DILLI TOWN WEB AGENCY
-   RESPONSIVE CSS
-   ========================================================= */
-
-
-/* =========================================================
-   RESET
-   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-html {
-    width: 100%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 body {
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-    background: #f6e9eb;
-    color: #111;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-}
-
-img {
-    max-width: 100%;
-}
-
-a {
-    color: inherit;
-}
-
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-header {
-    width: 100%;
-    background: #750000;
-}
-
-header nav {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 100px;
-
+    background-color: #FFE6E6;
+    color: #750000;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 15px 30px;
+    font-family: 'Inter', sans-serif;
 }
 
-.desktop-logo {
+nav {
+    background-color: #750000;
+    width: 250px;
+    height: 100vh;
+    padding: 40px 30px;
+    position: sticky;
+    top: 0;
     display: flex;
-    align-items: center;
-    text-decoration: none;
+    flex-direction: column;
 }
 
 .desktop-logo img {
-    width: 90px;
-    height: auto;
-    display: block;
+    width: 100px;
+    margin-bottom: 40px;
 }
 
-.desktop-nav {
+nav .link {
     display: flex;
-    align-items: center;
-    gap: 30px;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.desktop-nav a {
+nav .link a {
     color: white;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 22px;
 }
 
-.desktop-nav a:hover {
-    text-decoration: underline;
+nav .link a:hover {
+    color: #FFE6E6;
 }
 
-.desktop-nav button {
-    border: none;
-    background: white;
+nav .link button {
+    margin-top: 10px;
     color: #750000;
-
-    padding: 10px 20px;
-    border-radius: 4px;
-
-    font-size: 16px;
+    background-color: #FFE6E6;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 12px 20px;
+    border: none;
     cursor: pointer;
+    font-weight: bold;
+}
+
+nav .link button:hover {
+    background-color: white;
 }
 
 .mobile-nav {
     display: none;
 }
 
-
-/* =========================================================
-   MAIN
-   ========================================================= */
-
 main {
-    width: 100%;
+    flex: 1;
+    padding: 50px 60px;
+    max-width: calc(100% - 250px);
+    min-width: 0;
 }
 
-main > section {
-    width: calc(100% - 40px);
-    max-width: 1200px;
-
-    margin: 40px auto;
-    padding: 45px;
-
-    background: #750000;
-    color: white;
-}
-
-main > section.ligth-card {
-    background: #fcecef;
-    color: #111;
-}
-
-
-/* =========================================================
-   TYPOGRAPHY
-   ========================================================= */
-
-h1,
-h2,
-h3 {
-    line-height: 1.25;
+section {
+    margin-bottom: 50px;
 }
 
 h1 {
-    margin: 25px 0 20px;
-    font-size: 42px;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
 }
 
 h2 {
-    margin-bottom: 25px;
-    font-size: 34px;
+    margin: 30px 0 20px 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
 h3 {
-    margin-bottom: 15px;
-    font-size: 25px;
-}
-
-p {
-    margin-bottom: 20px;
-    font-size: 17px;
-}
-
-section > p:last-of-type {
-    margin-bottom: 25px;
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-
-    display: block;
-    margin: 0 auto 30px;
-}
-
-
-/* =========================================================
-   BUTTON
-   ========================================================= */
-
-.button {
-    display: inline-block;
-
-    background: white;
-    color: #750000;
-
-    text-decoration: none;
-
-    padding: 12px 22px;
-    margin-top: 10px;
-
-    border-radius: 4px;
-
-    font-size: 16px;
+    margin: 15px 0 10px 0;
+    font-family: 'Playfair Display', serif;
     font-weight: 600;
 }
 
-.button:hover {
-    opacity: 0.85;
-}
-
-
-/* =========================================================
-   GENERAL CARDS
-   ========================================================= */
-
-.card {
-    width: 100%;
-    padding: 30px;
-
-    margin: 25px 0;
-
-    background: #8a0000;
-    color: white;
-
-    border-radius: 0;
-
-    overflow: hidden;
-}
-
-.ligth-card {
-    background: #fcecef;
-    color: #111;
-
-    padding: 30px;
-}
-
-
-/* =========================================================
-   SERVICES
-   ========================================================= */
-
-main > section > .card:not(.work-grid .card) {
-    width: 100%;
-}
-
-.card h3 {
-    color: inherit;
-}
-
-.card p {
-    color: inherit;
-}
-
-
-/* =========================================================
-   NUMBER LIST
-   ========================================================= */
-
-.number-list {
-    width: 100%;
-}
-
-.number-list > div,
-.number-list > article {
-    margin-bottom: 30px;
-}
-
-.number-list h3 {
-    margin-bottom: 10px;
-}
-
-
-/* =========================================================
-   WORK GRID
-   THIS IS THE IMPORTANT RESPONSIVE PART
-   ========================================================= */
-
-.work-grid {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 30px;
-
-    align-items: start;
-}
-
-
-/*
-   Only cards INSIDE work-grid are affected.
-   Other .card elements remain separate.
-*/
-
-.work-grid .card {
-    width: 100%;
-    min-width: 0;
-
-    margin: 0;
-    padding: 25px;
-
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-}
-
-
-/* Project images */
-
-.work-grid .card img {
-    width: 100%;
-    max-width: 100%;
-
-    height: auto;
-
-    display: block;
-
-    margin-bottom: 20px;
-
-    object-fit: contain;
-}
-
-
-/* Project title */
-
-.work-grid .card h3 {
-    font-size: 28px;
+p {
     margin-bottom: 15px;
-
-    overflow-wrap: break-word;
+    line-height: 1.6;
 }
 
-
-/* Project description */
-
-.work-grid .card p {
-    font-size: 17px;
-
-    overflow-wrap: break-word;
+ul,
+ol {
+    margin: 15px 0 20px 25px;
 }
 
+li {
+    margin-bottom: 8px;
+}
 
-/* Project link */
+article {
+    margin: 20px 0;
+}
 
-.work-grid .card a {
-    color: white;
-
-    font-size: 18px;
-
-    text-decoration: none;
-
-    margin-top: auto;
-
+main a {
     display: inline-block;
-
-    overflow-wrap: break-word;
+    margin: 10px 0;
 }
 
-.work-grid .card a:hover {
-    text-decoration: underline;
+img {
+    margin: 15px 0;
+    max-width: 100%;
 }
-
-
-/* =========================================================
-   BLOG / INNER LIGHT CARDS
-   ========================================================= */
-
-.card .ligth-card {
-    margin: 25px 0;
-}
-
-.card .ligth-card:last-child {
-    margin-bottom: 0;
-}
-
-
-/* =========================================================
-   CONTACT
-   ========================================================= */
-
-section > div h3 {
-    margin-bottom: 5px;
-}
-
-section > div p {
-    margin-bottom: 20px;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
 
 footer {
-    width: 100%;
-
-    background: #750000;
+    background-color: #750000;
     color: white;
+    padding: 40px;
+    margin-top: 50px;
+}
 
-    padding: 60px 40px;
+footer p {
+    color: #FFE6E6;
+}
+
+footer nav {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 20px 0 0 0;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer nav a {
+    color: #FFE6E6;
+    font-size: 16px;
+}
+
+footer nav a:hover {
+    color: white;
 }
 
 footer .flex {
-    width: 100%;
-    max-width: 1200px;
-
-    margin: 0 auto;
-
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
-
+    align-items: flex-start;
     gap: 50px;
 }
 
-footer .left {
-    flex: 1;
-}
-
+footer .left,
 footer .right {
     flex: 1;
 }
 
-footer hr {
-    border: none;
-    border-left: 1px solid rgba(255, 255, 255, 0.4);
-
-    height: 180px;
+footer .right {
+    text-align: right;
 }
 
-footer h2 {
-    font-size: 30px;
+footer .flex hr {
+    display: none;
 }
 
-footer p {
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #FFE6E6;
+    border-radius: 5px;
     font-size: 16px;
 }
 
-footer a {
+button[type="submit"] {
+    background-color: #750000;
     color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-footer nav {
-    width: 100%;
-    max-width: 1200px;
-
-    margin: 40px auto 0;
-
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    gap: 25px;
+a {
+    color: black;
 }
 
-footer nav a {
-    color: white;
+.button {
     text-decoration: none;
+    background-color: #750000;
+    color: white;
+    padding: 12px 25px;
 }
 
-footer nav a:hover {
-    text-decoration: underline;
+.button:hover {
+    background-color: #FFE6E6;
+    color: #750000;
+    border: 1px solid #750000;
 }
 
 
-/* =========================================================
-   LARGE TABLETS
-   ========================================================= */
+/* ================================
+   CARDS
+   ================================ */
+
+.card {
+    background-color: #750000;
+    color: #FFE6E6;
+    padding: 25px;
+    width: 100%;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.card a {
+    text-decoration: none;
+    color: #FFB8B8;
+}
+
+.card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.number-list {
+    background-color: #FFB8B8;
+    color: #470000;
+    padding: 25px;
+    width: 100%;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.ligth-card {
+    background-color: #FFB8B8;
+    color: #470000;
+    padding: 20px;
+    width: 100%;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+
+/* ================================
+   WORK CARDS
+   ================================ */
+
+/*
+   This targets your existing:
+   
+   <div style="display: flex;">
+   
+   So you do NOT have to change your HTML.
+*/
+
+section>div[style*="display: flex"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 25px !important;
+    width: 100%;
+}
+
+section>div[style*="display: flex"] .card {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+section>div[style*="display: flex"] .card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ================================
+   TABLET
+   ================================ */
 
 @media (max-width: 1000px) {
 
-    header nav {
-        padding: 15px 25px;
+    main {
+        padding: 40px 35px;
     }
 
-    .desktop-nav {
-        gap: 20px;
-    }
-
-    .desktop-nav a {
-        font-size: 16px;
-    }
-
-    main > section {
-        width: calc(100% - 30px);
-        padding: 35px;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    h2 {
-        font-size: 30px;
-    }
-
-    .work-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    section>div[style*="display: flex"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 20px !important;
     }
 
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* ================================
+   MOBILE
+   ================================ */
 
 @media (max-width: 768px) {
 
-    header nav {
+    body {
+        flex-direction: column;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+        height: auto;
+        position: sticky;
+        top: 0;
         padding: 15px 20px;
+        flex-direction: column;
+        z-index: 1000;
     }
 
     .desktop-logo {
         display: none;
     }
 
-    .desktop-nav {
+    nav .desktop-nav {
         display: none;
     }
 
     .mobile-nav {
-        width: 100%;
-
         display: flex;
+        flex-direction: row;
+        justify-content: space-around;
         align-items: center;
-        justify-content: space-between;
-
-        gap: 10px;
+        gap: 5px;
+        width: 100%;
     }
 
     .mobile-nav a {
         display: flex;
         align-items: center;
         justify-content: center;
-
-        text-decoration: none;
-
-        flex: 1;
+        width: 45px;
+        height: 45px;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
     }
 
-    .mobile-nav .mobile-logo {
-        flex: 1;
+    .mobile-nav a:hover {
+        background-color: rgba(255, 230, 230, 0.1);
     }
 
-    .mobile-logo img {
-        width: 65px;
-        height: auto;
+    .mobile-nav a svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .mobile-nav .mobile-logo img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        margin: 0;
+    }
+
+    main {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 30px 20px;
+    }
+
+    section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* ================================
+       MOBILE WORK CARDS
+       ================================ */
+
+    section>div[style*="display: flex"] {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    section>div[style*="display: flex"] .card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 20px !important;
+    }
+
+    section>div[style*="display: flex"] .card img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
         display: block;
     }
 
-    .mobile-nav svg {
-        width: 30px;
-        height: 30px;
-
-        max-width: 30px;
-        flex-shrink: 0;
+    section>div[style*="display: flex"] .card h3 {
+        font-size: 22px;
+        line-height: 1.25;
+        overflow-wrap: break-word;
+        word-break: normal;
     }
 
-    main > section {
-        width: calc(100% - 24px);
-        padding: 30px;
-        margin: 30px auto;
-    }
-
-    h1 {
-        font-size: 32px;
-    }
-
-    h2 {
-        font-size: 28px;
-    }
-
-    h3 {
-        font-size: 23px;
-    }
-
-    p {
+    section>div[style*="display: flex"] .card p {
         font-size: 16px;
+        line-height: 1.6;
+        overflow-wrap: break-word;
+        word-break: normal;
     }
 
-    .work-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
+    section>div[style*="display: flex"] .card a {
+        overflow-wrap: break-word;
     }
 
-    .work-grid .card {
+
+    /* ================================
+       GENERAL MOBILE CARDS
+       ================================ */
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        min-width: 0;
+        overflow-wrap: break-word;
+    }
+
+    .card h3 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+
+    .card img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .ligth-card {
+        width: 100%;
+        max-width: 100%;
         padding: 20px;
     }
 
-    .work-grid .card h3 {
-        font-size: 24px;
+    .number-list {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
     }
 
+
+    /* ================================
+       FOOTER
+       ================================ */
+
     footer {
-        padding: 45px 25px;
+        width: 100%;
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+
+    footer nav {
+        gap: 10px;
     }
 
     footer .flex {
-        flex-direction: column;
-        gap: 30px;
+        display: block;
     }
 
-    footer hr {
-        width: 100%;
-        height: 1px;
+    footer .right {
+        text-align: left;
+        margin-top: 30px;
+    }
 
+    footer .flex hr {
+        display: block;
         border: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        border-top: 1px solid #FFB8B8;
+        width: 100%;
+        height: 0;
+        margin: 30px 0;
     }
 
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* ================================
+   SMALL PHONES
+   ================================ */
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
 
-    body {
-        width: 100%;
-        overflow-x: hidden;
+    main {
+        padding: 25px 15px;
     }
-
-    header {
-        width: 100%;
-    }
-
-    header nav {
-        min-height: 85px;
-        padding: 12px 15px;
-    }
-
-    .mobile-nav {
-        gap: 5px;
-    }
-
-    .mobile-logo img {
-        width: 58px;
-    }
-
-    .mobile-nav svg {
-        width: 28px;
-        height: 28px;
-    }
-
-
-    /* -----------------------------------------
-       MAIN
-       ----------------------------------------- */
-
-    main > section {
-        width: calc(100% - 20px);
-
-        margin: 20px auto;
-
-        padding: 25px 20px;
-    }
-
-
-    /* -----------------------------------------
-       TYPOGRAPHY
-       ----------------------------------------- */
 
     h1 {
         font-size: 30px;
@@ -668,193 +530,44 @@ footer nav a:hover {
     }
 
     h2 {
-        font-size: 27px;
+        font-size: 26px;
         line-height: 1.25;
     }
 
     h3 {
-        font-size: 22px;
-    }
-
-    p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-
-    /* -----------------------------------------
-       HERO
-       ----------------------------------------- */
-
-    .hero {
-        width: 100%;
-        height: auto;
-    }
-
-
-    /* -----------------------------------------
-       WORK CARDS
-       ONE CARD PER ROW ON MOBILE
-       ----------------------------------------- */
-
-    .work-grid {
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-    }
-
-    .work-grid .card {
-        width: 100%;
-        min-width: 0;
-
-        margin: 0;
-        padding: 20px;
-    }
-
-    .work-grid .card img {
-        width: 100%;
-        max-width: 100%;
-
-        height: auto;
-
-        display: block;
-
-        margin-bottom: 20px;
-    }
-
-    .work-grid .card h3 {
-        font-size: 26px;
-        line-height: 1.2;
-
-        word-break: normal;
-        overflow-wrap: anywhere;
-    }
-
-    .work-grid .card p {
-        font-size: 16px;
-        line-height: 1.6;
-
-        word-break: normal;
-        overflow-wrap: anywhere;
-    }
-
-    .work-grid .card a {
-        font-size: 17px;
-
-        word-break: normal;
-        overflow-wrap: anywhere;
-    }
-
-
-    /* -----------------------------------------
-       NORMAL CARDS
-       ----------------------------------------- */
-
-    .card {
-        width: 100%;
-        padding: 25px 20px;
-
-        margin: 20px 0;
-    }
-
-    .ligth-card {
-        padding: 25px 20px;
-    }
-
-
-    /* -----------------------------------------
-       FOOTER
-       ----------------------------------------- */
-
-    footer {
-        padding: 40px 20px;
-    }
-
-    footer .flex {
-        width: 100%;
-
-        flex-direction: column;
-
-        gap: 25px;
-    }
-
-    footer .left,
-    footer .right {
-        width: 100%;
-    }
-
-    footer hr {
-        width: 100%;
-        height: 1px;
-
-        border: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.4);
-    }
-
-    footer nav {
-        margin-top: 30px;
-
-        justify-content: flex-start;
-
-        gap: 15px 25px;
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    header nav {
-        padding: 10px;
-    }
-
-    .mobile-logo img {
-        width: 52px;
-    }
-
-    .mobile-nav svg {
-        width: 25px;
-        height: 25px;
-    }
-
-    main > section {
-        width: calc(100% - 12px);
-        padding: 20px 15px;
-    }
-
-    h1 {
-        font-size: 27px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    h3 {
-        font-size: 20px;
+        line-height: 1.3;
     }
 
     p {
         font-size: 15px;
     }
 
-    .work-grid .card {
-        padding: 17px;
+    .card {
+        padding: 18px;
     }
 
-    .work-grid .card h3 {
-        font-size: 23px;
+    .ligth-card {
+        padding: 18px;
     }
 
-    .work-grid .card p {
+    .number-list {
+        padding: 18px;
+    }
+
+    section>div[style*="display: flex"] {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    section>div[style*="display: flex"] .card {
+        padding: 18px !important;
+    }
+
+    section>div[style*="display: flex"] .card h3 {
+        font-size: 21px;
+    }
+
+    section>div[style*="display: flex"] .card p {
         font-size: 15px;
     }
 
