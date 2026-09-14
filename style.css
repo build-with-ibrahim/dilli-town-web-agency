@@ -69,6 +69,7 @@ main {
     flex: 1;
     padding: 50px 60px;
     max-width: calc(100% - 250px);
+    min-width: 0;
 }
 
 section {
@@ -211,6 +212,11 @@ a {
     border: 1px solid #750000;
 }
 
+
+/* ================================
+   CARDS
+   ================================ */
+
 .card {
     background-color: #750000;
     color: #FFE6E6;
@@ -238,6 +244,7 @@ a {
     color: #470000;
     padding: 25px;
     width: 100%;
+    min-width: 0;
     overflow-wrap: break-word;
 }
 
@@ -246,48 +253,79 @@ a {
     color: #470000;
     padding: 20px;
     width: 100%;
+    min-width: 0;
     overflow-wrap: break-word;
 }
 
 
-/* OUR WORK CARDS */
+/* ================================
+   WORK CARDS
+   ================================ */
 
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
+/*
+   This targets your existing:
+   
+   <div style="display: flex;">
+   
+   So you do NOT have to change your HTML.
+*/
+
+section>div[style*="display: flex"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 25px !important;
     width: 100%;
 }
 
-.work-grid .card {
+section>div[style*="display: flex"] .card {
+    width: 100%;
+    min-width: 0;
     margin: 0;
 }
 
+section>div[style*="display: flex"] .card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
-/* TABLET */
+
+/* ================================
+   TABLET
+   ================================ */
 
 @media (max-width: 1000px) {
 
-    .work-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
+    main {
+        padding: 40px 35px;
+    }
+
+    section>div[style*="display: flex"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 20px !important;
     }
 
 }
 
 
-/* MOBILE */
+/* ================================
+   MOBILE
+   ================================ */
 
 @media (max-width: 768px) {
 
     body {
         flex-direction: column;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     header {
         position: sticky;
         top: 0;
         z-index: 1000;
+        width: 100%;
     }
 
     nav {
@@ -336,22 +374,82 @@ a {
         height: 28px;
     }
 
+    .mobile-nav .mobile-logo img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        margin: 0;
+    }
+
     main {
+        width: 100%;
         max-width: 100%;
+        min-width: 0;
         padding: 30px 20px;
     }
 
-    .work-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    section {
+        width: 100%;
+        max-width: 100%;
     }
 
-    .work-grid .card {
-        width: 100%;
+
+    /* ================================
+       MOBILE WORK CARDS
+       ================================ */
+
+    section>div[style*="display: flex"] {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
+
+    section>div[style*="display: flex"] .card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 20px !important;
+    }
+
+    section>div[style*="display: flex"] .card img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        display: block;
+    }
+
+    section>div[style*="display: flex"] .card h3 {
+        font-size: 22px;
+        line-height: 1.25;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    section>div[style*="display: flex"] .card p {
+        font-size: 16px;
+        line-height: 1.6;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    section>div[style*="display: flex"] .card a {
+        overflow-wrap: break-word;
+    }
+
+
+    /* ================================
+       GENERAL MOBILE CARDS
+       ================================ */
 
     .card {
+        width: 100%;
+        max-width: 100%;
         padding: 20px;
+        min-width: 0;
+        overflow-wrap: break-word;
     }
 
     .card h3 {
@@ -364,23 +462,35 @@ a {
 
     .card img {
         width: 100%;
+        max-width: 100%;
         height: auto;
     }
 
-    .ligth-card,
-    .number-list {
+    .ligth-card {
+        width: 100%;
+        max-width: 100%;
         padding: 20px;
+    }
+
+    .number-list {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+
+    /* ================================
+       FOOTER
+       ================================ */
+
+    footer {
+        width: 100%;
+        max-width: 100%;
+        padding: 30px 20px;
     }
 
     footer nav {
         gap: 10px;
-    }
-
-    .mobile-nav .mobile-logo img {
-        width: 45px;
-        height: 45px;
-        object-fit: contain;
-        margin: 0;
     }
 
     footer .flex {
@@ -399,6 +509,66 @@ a {
         width: 100%;
         height: 0;
         margin: 30px 0;
+    }
+
+}
+
+
+/* ================================
+   SMALL PHONES
+   ================================ */
+
+@media (max-width: 480px) {
+
+    main {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 26px;
+        line-height: 1.25;
+    }
+
+    h3 {
+        line-height: 1.3;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .ligth-card {
+        padding: 18px;
+    }
+
+    .number-list {
+        padding: 18px;
+    }
+
+    section>div[style*="display: flex"] {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    section>div[style*="display: flex"] .card {
+        padding: 18px !important;
+    }
+
+    section>div[style*="display: flex"] .card h3 {
+        font-size: 21px;
+    }
+
+    section>div[style*="display: flex"] .card p {
+        font-size: 15px;
     }
 
 }
