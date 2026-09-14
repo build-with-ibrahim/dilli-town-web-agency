@@ -6,24 +6,12 @@
     box-sizing: border-box;
 }
 
-html {
-    width: 100%;
-    overflow-x: hidden;
-}
-
 body {
     background-color: #FFE6E6;
     color: #750000;
     display: flex;
-    width: 100%;
-    min-height: 100vh;
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
 }
-
-/* ================================
-   NAVIGATION
-   ================================ */
 
 nav {
     background-color: #750000;
@@ -32,14 +20,12 @@ nav {
     padding: 40px 30px;
     position: sticky;
     top: 0;
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
 }
 
 .desktop-logo img {
     width: 100px;
-    max-width: 100%;
     margin-bottom: 40px;
 }
 
@@ -79,25 +65,15 @@ nav .link button:hover {
     display: none;
 }
 
-
-/* ================================
-   MAIN
-   ================================ */
-
 main {
     flex: 1;
-    width: calc(100% - 250px);
+    padding: 50px 60px;
     max-width: calc(100% - 250px);
     min-width: 0;
-    padding: 50px 60px;
-    overflow-x: hidden;
 }
 
 section {
-    width: 100%;
-    max-width: 100%;
     margin-bottom: 50px;
-    min-width: 0;
 }
 
 h1 {
@@ -144,34 +120,13 @@ main a {
 img {
     margin: 15px 0;
     max-width: 100%;
-    height: auto;
 }
-
-
-/* ================================
-   HERO
-   ================================ */
-
-.hero {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 15px 0;
-}
-
-
-/* ================================
-   FOOTER
-   ================================ */
 
 footer {
     background-color: #750000;
     color: white;
     padding: 40px;
     margin-top: 50px;
-    width: 100%;
-    max-width: 100%;
 }
 
 footer p {
@@ -209,7 +164,6 @@ footer .flex {
 footer .left,
 footer .right {
     flex: 1;
-    min-width: 0;
 }
 
 footer .right {
@@ -220,15 +174,9 @@ footer .flex hr {
     display: none;
 }
 
-
-/* ================================
-   FORMS
-   ================================ */
-
 input,
 textarea {
     width: 100%;
-    max-width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #FFE6E6;
@@ -266,7 +214,7 @@ a {
 
 
 /* ================================
-   GENERAL CARDS
+   CARDS
    ================================ */
 
 .card {
@@ -275,14 +223,12 @@ a {
     padding: 25px;
     width: 100%;
     min-width: 0;
-    max-width: 100%;
-    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 .card a {
     text-decoration: none;
     color: #FFB8B8;
-    overflow-wrap: anywhere;
 }
 
 .card img {
@@ -290,7 +236,6 @@ a {
     max-width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
 }
 
 .number-list {
@@ -298,9 +243,8 @@ a {
     color: #470000;
     padding: 25px;
     width: 100%;
-    max-width: 100%;
     min-width: 0;
-    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 .ligth-card {
@@ -308,51 +252,46 @@ a {
     color: #470000;
     padding: 20px;
     width: 100%;
-    max-width: 100%;
     min-width: 0;
-    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 
 /* ================================
-   SERVICE CARDS
+   WORK CARDS
    ================================ */
 
 /*
-   Your service cards are:
+   YOUR HTML:
 
-   <article class="card">
+   <div class="work-grid">
+       <article class="card">...</article>
+       <article class="card">...</article>
+       <article class="card">...</article>
+   </div>
 
-   They will automatically become a responsive grid.
+   Desktop = 3 cards
+   Tablet  = 2 cards
+   Mobile  = 1 card
+
+   Design is NOT changed.
 */
 
-section:has(> article.card) {
-    min-width: 0;
-}
-
-/* Only consecutive card groups inside a section */
-section > article.card {
-    width: 100%;
-}
-
-
-/* ================================
-   OUR WORK GRID
-   ================================ */
-
 .work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 25px;
     width: 100%;
-    max-width: 100%;
     min-width: 0;
 }
 
 .work-grid .card {
-    width: 100%;
+    flex: 1 1 calc(33.333% - 17px);
+    width: calc(33.333% - 17px);
     min-width: 0;
     margin: 0;
+    padding: 25px;
+    overflow-wrap: break-word;
 }
 
 .work-grid .card img {
@@ -362,29 +301,18 @@ section > article.card {
     display: block;
 }
 
+.work-grid .card h3 {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
 
-/* ================================
-   SERVICE GRID
-   ================================ */
+.work-grid .card p {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
 
-/*
-   This keeps your exact card design.
-   It only changes the layout.
-*/
-
-@media (min-width: 1001px) {
-
-    section > article.card {
-        display: inline-block;
-        vertical-align: top;
-        width: calc(33.333% - 17px);
-        margin-right: 20px;
-    }
-
-    section > article.card:nth-of-type(3n) {
-        margin-right: 0;
-    }
-
+.work-grid .card a {
+    overflow-wrap: break-word;
 }
 
 
@@ -392,56 +320,21 @@ section > article.card {
    TABLET
    ================================ */
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
 
     main {
-        padding: 45px 40px;
+        padding: 40px 35px;
     }
 
     .work-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: flex;
+        flex-wrap: wrap;
         gap: 20px;
     }
 
-    section > article.card {
-        width: calc(50% - 12px);
-        margin-right: 16px;
-    }
-
-    section > article.card:nth-of-type(3n) {
-        margin-right: 16px;
-    }
-
-    section > article.card:nth-of-type(2n) {
-        margin-right: 0;
-    }
-
-}
-
-
-/* ================================
-   TABLET / SMALL LAPTOP
-   ================================ */
-
-@media (max-width: 900px) {
-
-    nav {
-        width: 220px;
-        padding: 35px 25px;
-    }
-
-    main {
-        width: calc(100% - 220px);
-        max-width: calc(100% - 220px);
-        padding: 40px 30px;
-    }
-
-    nav .link a {
-        font-size: 20px;
-    }
-
-    nav .link button {
-        font-size: 18px;
+    .work-grid .card {
+        flex: 1 1 calc(50% - 10px);
+        width: calc(50% - 10px);
     }
 
 }
@@ -454,28 +347,24 @@ section > article.card {
 @media (max-width: 768px) {
 
     body {
-        display: block;
+        flex-direction: column;
         width: 100%;
-        min-width: 0;
         overflow-x: hidden;
     }
 
     header {
-        width: 100%;
-        max-width: 100%;
         position: sticky;
         top: 0;
         z-index: 1000;
+        width: 100%;
     }
 
     nav {
         width: 100%;
-        max-width: 100%;
         height: auto;
-        min-height: 70px;
         position: sticky;
         top: 0;
-        padding: 12px 15px;
+        padding: 15px 20px;
         flex-direction: column;
         z-index: 1000;
     }
@@ -491,11 +380,10 @@ section > article.card {
     .mobile-nav {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         gap: 5px;
         width: 100%;
-        max-width: 100%;
     }
 
     .mobile-nav a {
@@ -504,7 +392,6 @@ section > article.card {
         justify-content: center;
         width: 45px;
         height: 45px;
-        flex-shrink: 0;
         border-radius: 8px;
         transition: background-color 0.2s ease;
     }
@@ -516,7 +403,6 @@ section > article.card {
     .mobile-nav a svg {
         width: 28px;
         height: 28px;
-        flex-shrink: 0;
     }
 
     .mobile-nav .mobile-logo img {
@@ -531,28 +417,11 @@ section > article.card {
         max-width: 100%;
         min-width: 0;
         padding: 30px 20px;
-        overflow-x: hidden;
     }
 
     section {
         width: 100%;
         max-width: 100%;
-        min-width: 0;
-        margin-bottom: 40px;
-    }
-
-
-    /* ================================
-       MOBILE SERVICE CARDS
-       ================================ */
-
-    section > article.card {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        margin: 20px 0;
-        padding: 20px;
     }
 
 
@@ -561,14 +430,16 @@ section > article.card {
        ================================ */
 
     .work-grid {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
         gap: 20px;
         width: 100%;
         max-width: 100%;
     }
 
     .work-grid .card {
+        flex: none;
         width: 100%;
         max-width: 100%;
         min-width: 0;
@@ -581,7 +452,24 @@ section > article.card {
         max-width: 100%;
         height: auto;
         display: block;
-        object-fit: cover;
+    }
+
+    .work-grid .card h3 {
+        font-size: 22px;
+        line-height: 1.25;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    .work-grid .card p {
+        font-size: 16px;
+        line-height: 1.6;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    .work-grid .card a {
+        overflow-wrap: break-word;
     }
 
 
@@ -592,21 +480,17 @@ section > article.card {
     .card {
         width: 100%;
         max-width: 100%;
-        min-width: 0;
         padding: 20px;
-        overflow: hidden;
+        min-width: 0;
+        overflow-wrap: break-word;
     }
 
     .card h3 {
         font-size: 20px;
-        line-height: 1.3;
-        overflow-wrap: break-word;
     }
 
     .card p {
         font-size: 15px;
-        line-height: 1.6;
-        overflow-wrap: break-word;
     }
 
     .card img {
@@ -619,61 +503,31 @@ section > article.card {
         width: 100%;
         max-width: 100%;
         padding: 20px;
-        min-width: 0;
     }
 
     .number-list {
         width: 100%;
         max-width: 100%;
         padding: 20px;
-        min-width: 0;
     }
 
 
     /* ================================
-       MOBILE HEADINGS
-       ================================ */
-
-    h1 {
-        font-size: 34px;
-        line-height: 1.2;
-    }
-
-    h2 {
-        font-size: 28px;
-        line-height: 1.25;
-    }
-
-    h3 {
-        line-height: 1.3;
-    }
-
-    p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-
-    /* ================================
-       FOOTER MOBILE
+       FOOTER
        ================================ */
 
     footer {
         width: 100%;
         max-width: 100%;
         padding: 30px 20px;
-        overflow: hidden;
+    }
+
+    footer nav {
+        gap: 10px;
     }
 
     footer .flex {
         display: block;
-        width: 100%;
-    }
-
-    footer .left,
-    footer .right {
-        width: 100%;
-        max-width: 100%;
     }
 
     footer .right {
@@ -688,13 +542,6 @@ section > article.card {
         width: 100%;
         height: 0;
         margin: 30px 0;
-    }
-
-    footer nav {
-        width: 100%;
-        max-width: 100%;
-        gap: 10px 15px;
-        padding-top: 20px;
     }
 
 }
@@ -721,45 +568,39 @@ section > article.card {
     }
 
     h3 {
-        font-size: 20px;
         line-height: 1.3;
     }
 
     p {
         font-size: 15px;
-        line-height: 1.6;
     }
-
-
-    /* Cards stay exactly in your style */
 
     .card {
         padding: 18px;
-        width: 100%;
-        max-width: 100%;
     }
 
     .ligth-card {
         padding: 18px;
-        width: 100%;
-        max-width: 100%;
     }
 
     .number-list {
         padding: 18px;
-        width: 100%;
-        max-width: 100%;
     }
 
 
-    /* Work cards */
+    /* ================================
+       SMALL PHONE WORK CARDS
+       ================================ */
 
     .work-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 18px;
     }
 
     .work-grid .card {
+        flex: none;
+        width: 100%;
         padding: 18px;
     }
 
@@ -769,93 +610,6 @@ section > article.card {
 
     .work-grid .card p {
         font-size: 15px;
-    }
-
-
-    /* Service cards */
-
-    section > article.card {
-        width: 100%;
-        max-width: 100%;
-        margin: 18px 0;
-        padding: 18px;
-    }
-
-
-    /* Mobile nav */
-
-    nav {
-        padding: 10px 12px;
-    }
-
-    .mobile-nav a {
-        width: 42px;
-        height: 42px;
-    }
-
-    .mobile-nav a svg {
-        width: 26px;
-        height: 26px;
-    }
-
-    .mobile-nav .mobile-logo img {
-        width: 42px;
-        height: 42px;
-    }
-
-
-    /* Footer */
-
-    footer {
-        padding: 25px 15px;
-    }
-
-}
-
-
-/* ================================
-   VERY SMALL PHONES
-   ================================ */
-
-@media (max-width: 360px) {
-
-    main {
-        padding: 20px 12px;
-    }
-
-    .mobile-nav {
-        gap: 2px;
-    }
-
-    .mobile-nav a {
-        width: 39px;
-        height: 39px;
-    }
-
-    .mobile-nav a svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    .mobile-nav .mobile-logo img {
-        width: 39px;
-        height: 39px;
-    }
-
-    .card,
-    .ligth-card,
-    .number-list,
-    section > article.card,
-    .work-grid .card {
-        padding: 16px;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    h2 {
-        font-size: 24px;
     }
 
 }
